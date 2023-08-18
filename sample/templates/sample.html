@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Your Django template.html file -->
+
+{% load custom_filters %}
+
+<ul>
+  {% for index, item in items|Enumerate %}
+    <li>{{ index }}. {{ item }}</li>
+  {% endfor %}
+</ul>
+
+{% with greeting="Hello, World!" %}
+    <h1>{{ greeting }}</h1>
+{% endwith %}
+
+{% with my_list=original_list|append:items|append:5 %}
+  <!-- {# Your code here, you can use {{ my_list.append(4) }} #} -->
+  {{ my_list }}
+{% endwith %}
+
+{% with my_list=|copy %}
+  {# Your code here, my_list will be a shallow copy of original_list #}
+  {{ split: }}
+  {{ my_list }}
+{% endwith %}
+
+</body>
+</html>
